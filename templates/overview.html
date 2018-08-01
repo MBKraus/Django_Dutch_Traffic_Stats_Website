@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+<title>{{ title }}</title>
+
+{% endblock %}
+
+{% block body_content %}
+
+<div class="container">
+
+	<div class="page-header">
+
+  		<h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp &nbsp {{ title }} - Overzicht Juli</h2>
+
+		<br/><br/>
+
+		<ul>
+
+			<li>Meetpunten op {{ time }}</li>
+			<li># is aantal waarnemingen</li>
+			<li>Wegafsluitingen / files vanwege wegwerkzaamheden zijn niet meegenomen </li>
+		</ul>
+	</div>
+
+	<div class="row">
+
+		<div class="col-md-6 box">
+
+			<div class="panel panel-default">
+
+			  <div class="panel-heading"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp&nbsp Snelwegen - Top 15 (naar km totaal)</div>
+
+			  <table class="table">
+
+				  <thead>
+
+				  	<tr>
+				  		<th scope="col">Weg</th>
+				  		<th scope="col">#</th>
+				  		<th scope="col">km</th>
+				  		<th scope="col">Traject</th>
+
+					</tr>
+
+				  </thead>
+
+				  <tbody>
+
+			  		{% for item in highway %}
+
+					<tr>
+					  	<th scope="row">{{ item.road }}</th>
+					  	<td>{{ item.num}}</td>
+					  	<td>{{ item.sum }}</td>
+					  	<td>{{ item.location_1 }}</td>
+					</tr>
+
+				  	{% endfor %}
+
+				  </tbody>
+
+			  </table>
+
+			</div>
+
+		</div>
+
+		<div class="col-md-6 box">
+
+			<div class="panel panel-default">
+
+			  <div class="panel-heading"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp&nbsp Provinciale wegen - Top 15 (naar aantal waarnemingen)</div>
+
+			  <table class="table">
+
+				  <thead>
+
+					<tr>
+
+						<th scope="col">Weg</th>
+				  		<th scope="col">#</th>
+				  		<th scope="col">km</th>
+						<th scope="col">Traject</th>
+
+					</tr>
+
+				  </thead>
+
+				  <tbody>
+
+			  		{% for item in regional %}
+
+			  		<tr>
+
+						<th scope="row">{{ item.road }}</th>
+				  		<td>{{ item.num}}</td>
+				  		<td>{{ item.sum }}</td>
+				  		<td>{{ item.location_1 }}</td>
+
+					</tr>
+
+			  		{% endfor %}
+
+			  		</tbody>
+
+				</table>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	<div class="row">
+
+		<div class="col-md-6 box">
+
+			<br>
+
+			<H5><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp&nbsp Stats per dag van de week</H5>
+
+			<br>
+
+			<ul>
+				<li>Maandag</li>
+				<li>Dinsdag</li>
+			</ul>
+		</div>
+
+		<div class="col-md-6 box">
+
+		</div>
+
+	</div>
+
+</div>
+
+
+{% endblock %}

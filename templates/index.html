@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+
+{% block robots %}
+
+
+{% endblock %}
+
+{% block title %}
+
+<title>Autopolonaise.nl - Als je zeker wilt weten dat je écht elke dag op die ene plek vast staat</title>
+
+{% endblock %}
+
+{% block metadescription %}
+
+<meta name="description" content="Autopolonaise.nl, als je zeker wilt weten dat je écht elke dag op die ene plek vast staat. File-statistieken voor de liefhebber">
+
+{% endblock %}
+
+{% block metakeywords %}
+
+<meta name="keywords" content="Autopolonaise.nl, file, file-statistieken, top 10 fileknooppunten, snelweg, provinciale weg, traffic jam, Amsterdam, Rotterdam, Den Haag, Utrecht">
+
+{% endblock %}
+
+
+{% block body_content %}
+
+<div class="jumbotron">
+
+      <div class="container">
+
+          <br> <br> <br> <br> <br>
+
+        <h2 class="display-3">Autopolonaise.nl</h2>
+
+          <h5 class="display-3">Als je zeker wilt weten dat je écht elke dag op die ene plek vast staat</h5>
+
+      </div>
+
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+          <h3><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp &nbsp Ochtendspits</h3>
+
+            <p>Check de grootste fileknooppunten gedurende de ochtendspits op snel- en provinciale wegen in de maand juli gemeten naar totaal aantal km en aantal waarnemingen (om 7.00, 8.00, en 9.00 uur). </p>
+            <p><a class="btn btn-secondary" href="{% url 'traffic:morning' %}" role="button">Zie hier voor meer  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></a></p>
+
+        </div>
+
+        <div class="col-md-4">
+
+          <h3><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp &nbsp Avondspits</h3>
+
+            <p>Check de grootste fileknooppunten gedurende de ochtendspits op snel- en provinciale wegen in de maand juli gemeten naar totaal aantal km en aantal waarnemingen (om 16.30, 17.30, en 18.30 uur). </p>
+            <p><a class="btn btn-secondary" href="{% url 'traffic:evening' %}" role="button">Zie hier voor meer  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></a></p>
+
+        </div>
+
+        <div class="col-md-4">
+
+          <h3><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp &nbsp Complete Ranglijst</h3>
+
+            <p>De ranglijst der ranglijsten - alleen voor echte bikkels.</p>
+            <p><a class="btn btn-secondary" href="{% url 'traffic:total' %}" role="button">Go for it. <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></a></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}
+
